@@ -1,5 +1,4 @@
-<?php
-/**
+<?php /**
  * html5up-prologue-playlight-mokxter functions and definitions
  *
  * @package html5up-prologue-playlight-mokxter
@@ -160,3 +159,10 @@ function skel_stylesheet_loader(){
 
 
 add_action( 'wp_enqueue_scripts', 'skel_stylesheet_loader' );
+
+
+// Additional code by me
+
+add_theme_support( 'post-thumbnails' );
+
+add_image_size( 'front-thumb', 293, 293, true);

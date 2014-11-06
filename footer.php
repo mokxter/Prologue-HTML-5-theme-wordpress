@@ -7,19 +7,17 @@
  * @package html5up-prologue-playlight-mokxter
  */
 ?>
-<!--
-	</div><!-- #content -->
--->
+		<!-- Footer -->
+			<div id="footer">
+				
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Design Mod: <a href="mokxter.github.io">Mokxter</a></li>
+					</ul>
+				
+			</div>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'html5up-prologue-playlight-mokxter' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'html5up-prologue-playlight-mokxter' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'html5up-prologue-playlight-mokxter' ), 'html5up-prologue-playlight-mokxter', '<a href="http://mokxter.github.io" rel="designer">Mokxter</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
 </div><!-- #page -->
-
 <?php wp_footer(); ?>
 
 </body>

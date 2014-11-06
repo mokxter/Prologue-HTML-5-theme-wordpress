@@ -12,12 +12,12 @@ http://localhost/playlight/wp-content/themes/html5up-prologue-playlight-mokxter/
 	skel.init({
 		reset: 'full',
 		breakpoints: {
-			'global':	{ range: '*', href: 'wp-content/themes/html5up-prologue-playlight-mokxter/css/style.css', containers: 1400, grid: { gutters: 40 }, viewport: { scalable: false } },
-			'wide':		{ range: '961-1880', href: 'wp-content/themes/html5up-prologue-playlight-mokxter/css/style-wide.css', containers: 1200, grid: { gutters: 40 } },
-			'normal':	{ range: '961-1620', href: 'wp-content/themes/html5up-prologue-playlight-mokxter/css/style-normal.css', containers: 960, grid: { gutters: 40 } },
-			'narrow':	{ range: '961-1320', href: 'wp-content/themes/html5up-prologue-playlight-mokxter/css/style-narrow.css', containers: '100%', grid: { gutters: 20 } },
-			'narrower':	{ range: '-960', href: 'wp-content/themes/html5up-prologue-playlight-mokxter/css/style-narrower.css', containers: '100%', grid: { gutters: 15 } },
-			'mobile':	{ range: '-736', href: 'wp-content/themes/html5up-prologue-playlight-mokxter/css/style-mobile.css', grid: { collapse: true } }
+			'global':	{ range: '*', href: '/wp-content/themes/html5up-prologue-playlight-mokxter/css/style.css', containers: 1400, grid: { gutters: 40 }, viewport: { scalable: false } },
+			'wide':		{ range: '961-1880', href: '/wp-content/themes/html5up-prologue-playlight-mokxter/css/style-wide.css', containers: 1200, grid: { gutters: 40 } },
+			'normal':	{ range: '961-1620', href: '/wp-content/themes/html5up-prologue-playlight-mokxter/css/style-normal.css', containers: 960, grid: { gutters: 40 } },
+			'narrow':	{ range: '961-1320', href: '/wp-content/themes/html5up-prologue-playlight-mokxter/css/style-narrow.css', containers: '100%', grid: { gutters: 20 } },
+			'narrower':	{ range: '-960', href: '/wp-content/themes/html5up-prologue-playlight-mokxter/css/style-narrower.css', containers: '100%', grid: { gutters: 15 } },
+			'mobile':	{ range: '-736', href: '/wp-content/themes/html5up-prologue-playlight-mokxter/css/style-mobile.css', grid: { collapse: true } }
 		},
 		plugins: {
 			layers: {

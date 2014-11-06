@@ -53,10 +53,10 @@
 							
 							-->
 							<ul>
-								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+								<li><a href="<?php if ( is_front_page() ) { echo '#top'; } else { echo '/#top'; } ?>" id="top-link" class=""><span class="icon fa-home">Intro</span></a></li>
+								<li><a href="<?php if ( is_front_page() ) { echo '#portfolio'; } else { echo '/#porfolio'; } ?>" id="portfolio-link" class=""><span class="icon fa-th">Gallery</span></a></li>
+								<li><a href="<?php if ( is_front_page() ) { echo '#about'; } else { echo '/#about'; } ?>" id="about-link" class=""><span class="icon fa-user">About Us</span></a></li>
+								<li><a href="<?php if ( is_front_page() ) { echo '#contact'; } else { echo '/#contact'; } ?>" id="contact-link" class=""><span class="icon fa-envelope">Contact Us</span></a></li>
 							</ul>
 						</nav>
 						
@@ -68,8 +68,6 @@
 						<ul class="icons">
 							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
 							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
 						</ul>
 				

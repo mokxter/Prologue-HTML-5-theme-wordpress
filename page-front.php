@@ -11,23 +11,17 @@
  */
 
 get_header(); ?>
-		<!-- Main -->
-			<div id="main">
 
+			<!-- Main -->
+			<div id="main">
 				<!-- Intro -->
 					<section id="top" class="one dark cover">
 						<div class="container">
 
 							<header>
-								<h2 class="alt">Hi! I'm <strong>Prologue</strong>, a <a href="http://html5up.net/license">free</a> responsive<br />
-								site template designed by <a href="http://html5up.net">HTML5 UP</a>.</h2>
-								<p>Ligula scelerisque justo sem accumsan diam quis<br />
-								vitae natoque dictum sollicitudin elementum.</p>
+								<h2 class="alt"><?php bloginfo( 'name' ); ?></h2>
+								<p><?php bloginfo( 'description' ); ?></p>
 							</header>
-							
-							<footer>
-								<a href="#portfolio" class="button scrolly">Magna Aliquam</a>
-							</footer>
 
 						</div>
 					</section>
@@ -37,15 +31,10 @@ get_header(); ?>
 						<div class="container">
 					
 							<header>
-								<h2>Portfolio</h2>
+								<h2>Gallery</h2>
 							</header>
-							
-							<p>Vitae natoque dictum etiam semper magnis enim feugiat convallis convallis
-							egestas rhoncus ridiculus in quis risus amet curabitur tempor orci penatibus.
-							Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis 
-							fusce hendrerit lacus ridiculus.</p>
 						
-							<div class="row">
+							<!-- <div class="row">
 								<div class="4u">
 									<article class="item">
 										<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
@@ -88,7 +77,48 @@ get_header(); ?>
 										</header>
 									</article>
 								</div>
+							</div> -->
+							<div class="row">
+							<?php
+								$count = 1;
+								$my_secondary_loop = new WP_Query( array( 'post_type' => 'album'));
+								// print_r($my_secondary_loop);
+							    if( $my_secondary_loop->have_posts() ):
+							    	while( $my_secondary_loop->have_posts() ): $my_secondary_loop->the_post();
+							        //The secondary loop
+							        $attachments = get_posts( array(
+							            'post_type' => 'attachment',
+							            'posts_per_page' => -1,
+							            'post_parent' => $post->ID
+							        ) );
+							        if ( $attachments ) {
+										foreach ( $attachments as $attachment ) {
+											if ($count == 1 || $count == 3 || $count == 5) echo "<div class='4u'>";
+											if ($count == 7) break;
+											echo "<article class='item'";
+												$class = "post-attachment mime-" . sanitize_title( $attachment->post_mime_type );
+												$title = wp_get_attachment_link( $attachment->ID, 'front-thumb', true );
+												echo "<a href='#' class='image fit'>";
+												echo $title;
+												echo "</a>";
+												echo "<header><h3>" . $attachment->post_excerpt . "</h3></header>";
+											echo "</article>"; // closing tag for article
+											$count++;
+											if ($count == 3 || $count == 5 || $count == 7) echo "</div><!-- closing tag for 4u -->";
+										}
+										
+									}
+							        endwhile; else:
+							?>
+                    			<p><?php _e( 'Sorry, no albums to be found.' ); ?></p>
+							<?php
+							    endif;
+							    wp_reset_postdata();
+							?>
 							</div>
+							<footer>
+							    <a href="album" class="button scrolly">Gallery Page</a>
+							</footer>
 
 						</div>
 					</section>
@@ -98,11 +128,9 @@ get_header(); ?>
 						<div class="container">
 
 							<header>
-								<h2>About Me</h2>
+								<h2>About Us</h2>
 							</header>
 
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-							
 							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus 
 							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae 
 							laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem 
@@ -116,47 +144,25 @@ get_header(); ?>
 				<!-- Contact -->
 					<section id="contact" class="four">
 						<div class="container">
-
 							<header>
-								<h2>Contact</h2>
+								<h2>Contact Us</h2>
 							</header>
-
-							<p>Elementum sem parturient nulla quam placerat viverra 
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia 
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc 
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-							
-							<form method="post" action="#">
-								<div class="row half">
-									<div class="6u"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u"><input type="text" name="email" placeholder="Email" /></div>
+							<div class="row">
+								<div class="6u">
+									<ul class="icons">
+										<li class="front"><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a>www.twitter.com/playlight</li>
+										<li class="front"><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a>www.facebook.com/playlight</li>
+									</ul>
 								</div>
-								<div class="row half">
-									<div class="12u">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
+								<div class="6u">
+									<ul class="icons">
+										<li class="front"><a href="#" class="icon fa-phone-square"><span class="label">Github</span></a>+63917.5496469</li>
+										<li class="front"><a href="#" class="icon fa-envelope"><span class="label">Email</span></a>someone@gmail.com</li>
+									</ul>
 								</div>
-								<div class="row">
-									<div class="12u">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
+							</div>							
 
 						</div>
 					</section>
-			
 			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-				
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				
-			</div>
-
-
-
+<?php get_footer(); ?>

@@ -791,3 +791,31 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/*
+Additional Style by mokxter
+*/
+
+
+#main > section.dark h2 {
+    font-weight: 700 !important;
+}
+
+#main > section.dark p {
+    font-weight: 700 !important;
+}
+
+
+
+
+/*.album-grid{width: 225px; height: 150px; float: left; list-style: none; list-style-type: none; margin: 0 18px 30px 0px;}*/
+
+.icons > li.front {
+	display: block;
+
+}
+
+header > h1,h2,.posted-on {
+	color: #ff6600 !important;
+	font-weight: 700 !important;
+}
